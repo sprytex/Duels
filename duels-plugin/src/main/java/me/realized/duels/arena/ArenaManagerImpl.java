@@ -274,7 +274,7 @@ public class ArenaManagerImpl implements Loadable, ArenaManager {
 
             final ArenaImpl arena = get((Player) shooter);
 
-            if (arena == null || !arena.isCounting()) {
+            if (arena == null || !arena.isCounting() || event.getEntity().getClass().getName().contains("Potion")) {
                 return;
             }
 
