@@ -248,8 +248,8 @@ public class ArenaManagerImpl implements Loadable, ArenaManager {
                     !event.hasBlock() && !(actionIsClick && itemIsPearl)) {
                 return;
             }
-
             event.setCancelled(true);
+            player.updateInventory();
         }
 
         @EventHandler(ignoreCancelled = true)
