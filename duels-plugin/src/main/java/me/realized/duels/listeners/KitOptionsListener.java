@@ -23,6 +23,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent.RegainReason;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.EquipmentSlot;
@@ -67,6 +68,22 @@ public class KitOptionsListener implements Listener {
         }
 
         event.setDamage(0);
+    }
+
+    @EventHandler
+    public void on(final FoodLevelChangeEvent event) {
+        if (!(event.getEntity() instanceof Player)) {
+            return;
+        }
+
+        final Player player = (Player) event.getEntity();
+        final ArenaImpl arena = arenaManager.get(player);
+
+        if (arena == null || !isEnabled(arena, Characteristic.HUNGER)) {
+            return;
+        }
+
+        event.setCancelled(true);
     }
 
     @EventHandler

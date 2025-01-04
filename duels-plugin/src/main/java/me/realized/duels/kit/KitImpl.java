@@ -152,6 +152,7 @@ public class KitImpl extends BaseButton implements Kit {
         SOUP,
         SUMO,
         UHC,
-        COMBO;
+        COMBO,
+        HUNGER;
     }
 }
