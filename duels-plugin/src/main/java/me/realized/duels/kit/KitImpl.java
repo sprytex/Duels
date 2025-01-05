@@ -47,7 +47,7 @@ public class KitImpl extends BaseButton implements Kit {
                         .of(displayed.clone())
                         .name(plugin.getLang().getMessage("GUI.kit-selector.buttons.kit.name",
                                 "kit", name))
-                        .lore(plugin.getLang().getMessage("GUI.kit-selector.buttons.queue.lore",
+                        .lore(plugin.getLang().getMessage("GUI.kit-selector.buttons.kit.lore",
                                 "kit", name).split("\n"))
                         .build() :
                 ItemBuilder
