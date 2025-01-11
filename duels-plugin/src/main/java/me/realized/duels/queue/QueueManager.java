@@ -202,7 +202,7 @@ public class QueueManager implements Loadable, DQueueManager, Listener {
             if (update) {
                 gui.calculatePages();
             }
-        }, 20L, 40L).getTaskId();
+        }, 20L, 10L).getTaskId();
     }
 
     @Override
