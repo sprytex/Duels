@@ -621,6 +621,16 @@ public class DuelManager implements Loadable {
         }
 
         @EventHandler
+        public void onInteract(PlayerInteractEvent event) {
+            Player player = event.getPlayer();
+            ArenaImpl arena = arenaManager.get(player);
+
+            if (arena != null && arena.isEndGame()) {
+                event.setCancelled(true);
+            }
+        }
+
+        @EventHandler
         public void on(final PlayerQuitEvent event) {
             final Player player = event.getPlayer();
 
