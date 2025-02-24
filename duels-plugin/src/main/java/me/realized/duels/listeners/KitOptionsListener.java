@@ -63,7 +63,7 @@ public class KitOptionsListener implements Listener {
         final Player player = (Player) event.getEntity();
         final ArenaImpl arena = arenaManager.get(player);
 
-        if (arena == null || !isEnabled(arena, Characteristic.SUMO)) {
+        if (arena == null || !isEnabled(arena, Characteristic.SUMO) && !isEnabled(arena, Characteristic.BOXING)) {
             return;
         }
 

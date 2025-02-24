@@ -162,6 +162,7 @@ public class KitImpl extends BaseButton implements Kit {
         SUMO,
         UHC,
         COMBO,
+        BOXING,
         HUNGER;
     }
 }
