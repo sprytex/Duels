@@ -30,6 +30,7 @@ dependencies {
     }
     implementation name: 'Vault-1.6.7'
     implementation name: 'CombatTagPlus'
+    implementation name: 'AntiRelog-3.0.11'
     implementation name: 'PvPManager-3.7.16'
     implementation name: 'Factions-1.6.9.5-U0.1.14'
     implementation name: 'MassiveCore'
