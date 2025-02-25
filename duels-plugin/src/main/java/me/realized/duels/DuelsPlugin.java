@@ -64,8 +64,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class DuelsPlugin extends JavaPlugin implements Duels, LogSource {
 
-    private static final int BSTATS_ID = 2696;
-    private static final int RESOURCE_ID = 20171;
+    private static final int BSTATS_ID = 24919;
+    private static final int RESOURCE_ID = 118881;
     private static final String SPIGOT_INSTALLATION_URL = "https://www.spigotmc.org/wiki/spigot-installation/";
 
     @Getter
