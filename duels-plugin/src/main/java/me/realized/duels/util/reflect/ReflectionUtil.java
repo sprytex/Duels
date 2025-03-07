@@ -45,9 +45,6 @@ public final class ReflectionUtil {
 
     public static Class<?> getNMSClass(final String name, final boolean logError) {
         try {
-            if (MAJOR_VERSION >= 17) {
-                return Class.forName("net.minecraft." + name);
-            }
             return Class.forName("net.minecraft" + (getMajorVersion() < 17 ? (".server." + PACKAGE_VERSION) : "") + "." + name);
         } catch (ClassNotFoundException ex) {
             if (logError) {
