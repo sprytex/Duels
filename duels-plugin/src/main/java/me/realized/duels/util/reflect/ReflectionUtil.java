@@ -1,4 +1,4 @@
-ackage me.realized.duels.util.reflect;
+package me.realized.duels.util.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
