@@ -1,4 +1,4 @@
-package me.realized.duels.util.reflect;
+ackage me.realized.duels.util.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -59,17 +59,21 @@ public final class ReflectionUtil {
         return getNMSClass(name, true);
     }
 
+
     public static Class<?> getCBClass(final String path, final boolean logError) {
         try {
-            if (MAJOR_VERSION >= 17) {
-                return Class.forName("org.bukkit.craftbukkit." + path);
-            }
-            return Class.forName("org.bukkit.craftbukkit." + PACKAGE_VERSION + "." + path);
+            Class<?> clazz = Class.forName("org.bukkit.craftbukkit." + PACKAGE_VERSION + "." + path);
+            return clazz;
+        } catch (ClassNotFoundException ignored) {
+        }
+
+        try {
+            Class<?> clazz = Class.forName("org.bukkit.craftbukkit." + path);
+            return clazz;
         } catch (ClassNotFoundException ex) {
             if (logError) {
-                Log.error(ex.getMessage(), ex);
+                Log.error("Failed to find CraftBukkit class: " + path + " in both versioned and unversioned paths", ex);
             }
-
             return null;
         }
     }
