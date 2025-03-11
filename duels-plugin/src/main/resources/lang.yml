@@ -406,8 +406,6 @@ GUI:
     buttons:
       kit:
         name: '&3%kit%'
-        lore:
-          - '&a&lClick to Queue!'
       previous-page:
         name: '&aPrevious Page'
       next-page:
